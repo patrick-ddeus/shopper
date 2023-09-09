@@ -9,37 +9,17 @@ Esta ferramenta permite que os usuários atualizem os preços dos produtos de su
 - Node.js e npm
 - Banco de dados MySQL (versão 8)
 
-## Instruções
-
-Siga as instruções abaixo para configurar o ambiente de desenvolvimento:
-
-1. **Node.js e npm:**
-
-   - Instale o Node.js e o npm em seu sistema. Você pode encontrar as instruções em [nodejs.org](https://nodejs.org/).
-
-2. **Banco de Dados MySQL:**
-
-   - Configure o banco de dados MySQL e defina as credenciais de acesso.
-   - Crie um arquivo `.env` para armazenar as informações sensíveis do banco de dados.
-
-3. **Clone o Repositório:**
-
-   - Clone este repositório para o seu ambiente local.
-
-4. **Instalação de Dependências:**
-   - Dentro das pastas `backend` e `frontend`, execute o comando `npm install` para instalar as dependências.
-
 ## Node.js e npm:
 
 Antes de tudo é necessário que você tenha o `node 18 LTS` instalado em sua máquina. Ele é necessário para que o projeto possa ser executado.
 
 ## Nota 
-O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`. O guia para configurar esses arquivos estão nas instruções abaixo.
+O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`, o guia para configurar esses dois arquivos estão nas instruções manuais.
+Existem 2 formas de instalar esse projeto, com Docker e Manualmente, segue a instalação com Docker primeiramente:
 
 ## Instalação com Docker (Recomendado)
 
 Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, siga as instruções abaixo:
-
 
 ### Requisitos do Sistema
 
