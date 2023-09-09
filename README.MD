@@ -34,7 +34,7 @@ Siga as instruções abaixo para configurar o ambiente de desenvolvimento:
 Antes de tudo é necessário que você tenha o `node 18 LTS` instalado em sua máquina. Ele é necessário para que o projeto possa ser executado.
 
 ## Nota 
-O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`. O guia para configurar esses arquivos estão nas instruções abaixo das do Docker.
+O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`. O guia para configurar esses arquivos estão nas instruções abaixo.
 
 ## Instalação com Docker (Recomendado)
 
@@ -45,11 +45,8 @@ Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, s
 
 - Docker: Certifique-se de ter o Docker instalado em seu sistema. Você pode encontrar instruções de instalação em [docker.com](https://www.docker.com/get-started).
 
-### Instruções de Uso
+### Clone o Repositório
 
-1. **Clone o Repositório:**
-
-   - Clone este repositório para o seu ambiente local:
 
    ```shell
    git clone https://github.com/patrick-ddeus/shopper.git
@@ -57,7 +54,7 @@ Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, s
 
 ### Configuração do banco de dados
 
-Configure o banco de dados MySQL por meio do Docker, certifique-se de estar na pasta do `docker-compose.yml`. Use o arquivo `docker-compose.yml` fornecido. Para configurar as credenciais do banco use o `.env` já fornecido pelo repositório. Algumas informações sobre as credenciais:
+Configure o banco de dados MySQL por meio do Docker. Use o arquivo `docker-compose.yml` fornecido. Para configurar as credenciais do banco use o `.env` já fornecido pelo repositório. Algumas informações sobre as credenciais:
 
 ```
 MYSQL_ROOT_PASSWORD=SENHA DO USUÁRIO ROOT
@@ -69,6 +66,44 @@ MYSQL_DATABASE=shopper (NOME DA TABELA NO BANCO)
 Após a configuração das credenciais utilize o comando do docker
 
 ### Back End e Front End:
+
+Na pasta `backend` e na pasta `front`, crie um arquivo `.env` e preenche-o com as credenciais corretas para que o sistema funcione dentro do Docker:
+
+
+### Construção dos Contêiners
+Certifique-se de estar na pasta raíz desse repositório onde fica o `docker-compose.yml`
+
+```shell
+docker-compose up -d
+```
+
+Isso iniciará todos os contêiner necessários para a execução da aplicação, o arquivo `.env` na raíz do repositório garantirá que o MySQL seja iniciado com as configurações definidas no arquivo docker-compose.yml.
+
+### Acesso ao Banco de Dados via phpMyAdmin (Opcional):
+
+Você pode acessar o phpMyAdmin para gerenciar o banco de dados MySQL através do seguinte link: http://localhost:8088.
+Use as credenciais definidas no arquivo docker-compose.yml para fazer login.
+
+### Comandos Úteis do Docker
+
+- `docker-compose up -d`: Iniciar os contêineres do Docker em segundo plano.
+- `docker-compose down`: Encerrar os contêineres e remover os volumes.
+- `docker ps`: Listar todos os contêineres em execução.
+- `docker-compose logs`: Visualizar logs dos contêineres.
+
+Lembre-se de que o ambiente Docker já inclui as configurações necessárias para o MySQL, tornando a configuração mais fácil e eficiente.
+
+## Instalação normal
+
+### Configuração do Banco de Dados
+
+Certifique-se de criar o banco de dados corretamente e configurar com as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
+
+### Execução do Projeto
+
+Siga as etapas abaixo para iniciar o back end e o front-end:
+
+**Back End e Front End:**
 
 Na pasta `backend`, crie um arquivo `.env` e preenche-o com as credenciais corretas e então execute o seguinte comando para atualizar as dependências:
 
@@ -95,40 +130,6 @@ E para iniciar o projeto:
 ```shell
    npm run dev
 ```
-
-### Acesso ao Banco de Dados via phpMyAdmin (Opcional):
-
-Você pode acessar o phpMyAdmin para gerenciar o banco de dados MySQL através do seguinte link: http://localhost:8088.
-Use as credenciais definidas no arquivo docker-compose.yml para fazer login.
-
-```shell
-docker-compose up -d
-```
-
-Isso iniciará um contêiner MySQL com as configurações definidas no arquivo docker-compose.yml.
-
-## Comandos Úteis do Docker
-
-- `docker-compose up -d`: Iniciar os contêineres do Docker em segundo plano.
-- `docker-compose down`: Encerrar os contêineres e remover os volumes.
-- `docker ps`: Listar todos os contêineres em execução.
-- `docker-compose logs`: Visualizar logs dos contêineres.
-
-Lembre-se de que o ambiente Docker já inclui as configurações necessárias para o MySQL, tornando a configuração mais fácil e eficiente.
-
-## Instalação normal
-
-### Configuração do Banco de Dados
-
-Certifique-se de criar o banco de dados corretamente e configurar com as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
-
-### Execução do Projeto
-
-Siga as etapas abaixo para iniciar o back end e o front-end:
-
-**Back End e Front End:**
-
-Entre nas pastas backend e frontend do projeto e siga as instruções anteriores para iniciar o back end e o front-end.
 
 ### Uso
 
