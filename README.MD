@@ -53,7 +53,7 @@ Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, s
 
 ### Configuração do banco de dados
 
-Configure o banco de dados MySQL por meio do Docker. Use o arquivo `docker-compose.yml` fornecido. Para configurar as credenciais do banco use o `.env` já fornecido pelo repositório. Algumas informações sobre as credenciais:
+Configure o banco de dados MySQL por meio do Docker, certifique-se de estar na pasta do `docker-compose.yml`. Use o arquivo `docker-compose.yml` fornecido. Para configurar as credenciais do banco use o `.env` já fornecido pelo repositório. Algumas informações sobre as credenciais:
 
 ```
 MYSQL_ROOT_PASSWORD=SENHA DO USUÁRIO ROOT
