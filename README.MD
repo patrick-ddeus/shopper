@@ -4,6 +4,16 @@
 
 Esta ferramenta permite que os usuários atualizem os preços dos produtos de sua loja de e-commerce de forma massiva e segura, evitando erros que possam prejudicar o negócio. Ela foi desenvolvida em Node.js (back end) e React.js (front-end) e utiliza um banco de dados MySQL para armazenar informações.
 
+## Índice 
+
+* [Requisitos do Sistema](##Requisitos-do-Sistema)
+* [Nota](##Nota)
+* [Instalação com Docker (Recomendado)](##Instalação-com-Docker-(Recomendado))
+* [Instalação normal](##Instalação-normal)
+* [Uso](##Uso)
+* [Testes](##Testes)
+
+
 ## Requisitos do Sistema
 
 - Node.js e npm
@@ -17,7 +27,7 @@ Antes de tudo é necessário que você tenha o `node 18 LTS` instalado em sua m�
 O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`, o guia para configurar esses dois arquivos estão nas instruções manuais.
 Existem 2 formas de instalar esse projeto, com Docker e Manualmente, segue a instalação com Docker primeiramente:
 
-## Instalação com Docker (Recomendado)
+## Instalação com Docker (Recomendado) 
 
 Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, siga as instruções abaixo:
 
@@ -78,7 +88,7 @@ Lembre-se de que o ambiente Docker já inclui as configurações necessárias pa
 
 ### Configuração do Banco de Dados
 
-Certifique-se de criar o banco de dados corretamente e configurar com as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
+Certifique-se de ter o mysql instalado e ter criar o banco de dados corretamente e configurar com as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
 
 ### Execução do Projeto
 
@@ -112,7 +122,7 @@ E para iniciar o projeto:
    npm run dev
 ```
 
-### Uso
+## Uso
 
 1. Faça o upload do arquivo CSV contendo os códigos de produtos e os novos preços.
 2. Clique no botão "VALIDAR" para verificar a formatação do arquivo e as regras de validação.
@@ -120,3 +130,24 @@ E para iniciar o projeto:
 4. Caso uma ou mais regras de validação sejam quebradas, o sistema exibirá feedback ao lado de cada produto no campo status.
 5. O botão "ATUALIZAR" só estará habilitado se todos os produtos estiverem validados e sem regras quebradas.
 6. Clique em "ATUALIZAR" para aplicar os novos preços no banco de dados.
+
+## Testes
+
+Foram criados testes de integração no `backend` para testar as regras de negócio e a validação dos erros. Não tive tempo de desenvolver mais. Foi fornecido um arquivo `database.sql` para testes na pasta `test`, esse arquivo contêm alguns produtos com valores atualizados para que os testes funcionem adequadamente. Sem trapaças.
+
+### Configuração
+
+Para configurar os testes você precisa criar um novo arquivo chamado `.env.test` com as mesmas informações do seu `.env` principal, porém com uma tabela de dados diferente que você mesmo deverá criar.
+
+### Comandos
+
+Para rodar os testes basta usar o comando:
+
+```
+npm run test
+```
+ou
+```
+npm run test:watch
+```
+para que os testes continuem rodando.

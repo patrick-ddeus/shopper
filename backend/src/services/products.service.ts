@@ -105,8 +105,7 @@ async function handlePackProductsUpdate(
     handleInvalidPackUpdate(
       code.toString(),
       firstProductWithPack,
-      `ERRO! Não foi possível atualizar o pacote porque o reajuste do 
-      produto com código: ${productsThatArePartOfPack[0].code} não é válido, ou porque você deve fornecer outro produto que complemente o preço deste pacote`,
+      `ERRO! Não foi possível atualizar o pacote porque o reajuste do produto com código: ${productsThatArePartOfPack[0].code} não é válido, ou porque você deve fornecer outro produto que complemente o preço deste pacote`,
     );
     return;
   }
@@ -127,8 +126,7 @@ async function handlePackProductsUpdate(
     handleInvalidPackUpdate(
       code.toString(),
       firstProductWithPack,
-      `O preço de venda não pode ser definido abaixo do preço de custo. 
-    Ajuste o preço de acordo para garantir que ele cubra o custo. preço de custo: ${firstProductWithPack.pack_cost_price}`,
+      `O preço de venda não pode ser definido abaixo do preço de custo. Ajuste o preço de acordo para garantir que ele cubra o custo. preço de custo: ${firstProductWithPack.pack_cost_price}`,
     );
     return;
   }
@@ -258,8 +256,7 @@ async function validatePriceRulesForProduct(
         name,
         sales_price,
         sales_price,
-        `O preço de venda não pode ser inferior ao preço de custo. 
-        Ajuste o preço de acordo para garantir que ele cubra o custo. preço de custo: ${cost_price}, reajuste fornecido: ${newPrice}`,
+        `O preço de venda não pode ser inferior ao preço de custo. Ajuste o preço de acordo para garantir que ele cubra o custo. preço de custo: ${cost_price}, reajuste fornecido: ${newPrice}`,
       ),
     );
     return productsWithInvalidRule;
@@ -340,10 +337,7 @@ async function checkIfPackInRequest(
         productFromRequestInDatabase.product_name,
         productFromRequestInDatabase.product_sales_price,
         productFromRequestInDatabase.product_sales_price,
-        `ERROR: Para atualizar este produto é necessário ter também no arquivo o pacote com o seu reajuste.
-        Este é o código do pacote que você deve atualizar: ${
-          productFromRequestInDatabase.pack_code
-        }, novo preço inserido: ${productNewPrice}, preço que o pacote deve ter: ${priceThatPackMustHave.toFixed(
+        `ERROR: Para atualizar este produto é necessário ter também no arquivo o pacote com o seu reajuste. Este é o código do pacote que você deve atualizar: ${productFromRequestInDatabase.pack_code}, novo preço inserido: ${productNewPrice}, preço que o pacote deve ter: ${priceThatPackMustHave.toFixed(
           2,
         )}`,
       ),
