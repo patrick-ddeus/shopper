@@ -33,9 +33,13 @@ Siga as instruções abaixo para configurar o ambiente de desenvolvimento:
 
 Antes de tudo é necessário que você tenha o `node 18 LTS` instalado em sua máquina. Ele é necessário para que o projeto possa ser executado.
 
+## Nota 
+O arquivo `.env` criado na raíz desse repositório é usado para a configuração do Docker, se for usar uma configuração manual então utilize os `.env` que estão dentro das pastas `frontend` e `backend`. O guia para configurar esses arquivos estão nas instruções abaixo das do Docker.
+
 ## Instalação com Docker (Recomendado)
 
 Se você preferir usar o Docker para configurar o ambiente de desenvolvimento, siga as instruções abaixo:
+
 
 ### Requisitos do Sistema
 
