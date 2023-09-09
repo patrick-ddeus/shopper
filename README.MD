@@ -63,8 +63,6 @@ MYSQL_PASSWORD=SENHA DO SEU USUÁRIO
 MYSQL_DATABASE=shopper (NOME DA TABELA NO BANCO)
 ```
 
-Após a configuração das credenciais utilize o comando do docker
-
 ### Back End e Front End:
 
 Na pasta `backend` e na pasta `front`, crie um arquivo `.env` e preenche-o com as credenciais corretas para que o sistema funcione dentro do Docker:
