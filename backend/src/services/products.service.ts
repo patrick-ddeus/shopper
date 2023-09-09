@@ -330,14 +330,16 @@ async function checkIfPackInRequest(
     return +product.code === +packInDatabaseByProductId[0].pack_code;
   });
 
-  if (priceThatPackMustHave !== +isPackReadjustmentInRequest?.new_price) {
+  if (Math.round(priceThatPackMustHave) !== +isPackReadjustmentInRequest?.new_price) {
     invalidProducts.push(
       buildError(
         code.toString(),
         productFromRequestInDatabase.product_name,
         productFromRequestInDatabase.product_sales_price,
         productFromRequestInDatabase.product_sales_price,
-        `ERROR: Para atualizar este produto é necessário ter também no arquivo o pacote com o seu reajuste. Este é o código do pacote que você deve atualizar: ${productFromRequestInDatabase.pack_code}, novo preço inserido: ${productNewPrice}, preço que o pacote deve ter: ${priceThatPackMustHave.toFixed(
+        `ERROR: Para atualizar este produto é necessário ter também no arquivo o pacote com o seu reajuste. Este é o código do pacote que você deve atualizar: ${
+          productFromRequestInDatabase.pack_code
+        }, novo preço inserido: ${productNewPrice}, preço que o pacote deve ter: ${priceThatPackMustHave.toFixed(
           2,
         )}`,
       ),
