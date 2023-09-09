@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon ./src/server.ts'",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/server.ts",
     "start": "node dist/server.js",
     "build": "tsc -p tsconfig.json",
     "lint": "eslint .",
