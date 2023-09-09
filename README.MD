@@ -55,17 +55,17 @@ MYSQL_DATABASE=shopper (NOME DA TABELA NO BANCO)
 
 ### Back End e Front End:
 
-Na pasta `backend` e na pasta `front`, crie um arquivo `.env` e preenche-o com as credenciais corretas para que o sistema funcione dentro do Docker:
+Na pasta `backend` e na pasta `frontend`, crie um arquivo `.env` e preenche-o com as credenciais corretas para que o sistema funcione dentro do Docker:
 
 
-### Construção dos Contêiners
+### Construção dos Containers
 Certifique-se de estar na pasta raíz desse repositório onde fica o `docker-compose.yml`
 
 ```shell
 docker-compose up -d
 ```
 
-Isso iniciará todos os contêiner necessários para a execução da aplicação, o arquivo `.env` na raíz do repositório garantirá que o MySQL seja iniciado com as configurações definidas no arquivo docker-compose.yml.
+Isso iniciará todos os containers necessários para a execução da aplicação, o arquivo `.env` na raíz do repositório garantirá que o MySQL seja iniciado com as configurações definidas no arquivo docker-compose.yml.
 
 Para as configurações setadas caso todos os conteinêrs tenham sido iniciados corretamente sua aplicação estará disponível em http://localhost:3030. 
 
@@ -73,14 +73,14 @@ Para as configurações setadas caso todos os conteinêrs tenham sido iniciados 
 
 Você pode acessar o phpMyAdmin para gerenciar o banco de dados MySQL através do seguinte link: http://localhost:8088.
 Use as credenciais definidas no arquivo docker-compose.yml para fazer login.
-No painel você poderá carregar as queries no arquivo `database.sql` para que a aplicação funcione corretamente.
+No painel você poderá carregar as queries do arquivo `database.sql` para que a aplicação funcione corretamente.
 
 ### Comandos Úteis do Docker
 
-- `docker-compose up -d`: Iniciar os contêineres do Docker em segundo plano.
-- `docker-compose down`: Encerrar os contêineres e remover os volumes.
-- `docker ps`: Listar todos os contêineres em execução.
-- `docker-compose logs`: Visualizar logs dos contêineres.
+- `docker-compose up -d`: Iniciar os containers do Docker em segundo plano.
+- `docker-compose down`: Encerrar os containers e remover os volumes.
+- `docker ps`: Listar todos os containers em execução.
+- `docker-compose logs`: Visualizar logs dos containers.
 
 Lembre-se de que o ambiente Docker já inclui as configurações necessárias para o MySQL, tornando a configuração mais fácil e eficiente.
 
@@ -88,7 +88,7 @@ Lembre-se de que o ambiente Docker já inclui as configurações necessárias pa
 
 ### Configuração do Banco de Dados
 
-Certifique-se de ter o mysql instalado e ter criar o banco de dados corretamente e configurar com as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
+Certifique-se de ter o mysql instalado e de ter criado o banco de dados corretamente, após isso configure as credenciais definidas no arquivo `.env` dentro da pasta `backend`, um `.env.example` foi fornecido como exemplo. Nesse repositório existe um arquivo `database.sql` que você pode utilizar como dump para o banco de dados.
 
 ### Execução do Projeto
 
@@ -133,7 +133,7 @@ E para iniciar o projeto:
 
 ## Testes
 
-Foram criados testes de integração no `backend` para testar as regras de negócio e a validação dos erros. Não tive tempo de desenvolver mais. Foi fornecido um arquivo `database.sql` para testes na pasta `test`, esse arquivo contêm alguns produtos com valores atualizados para que os testes funcionem adequadamente. Sem trapaças.
+Foram criados testes de integração no `backend` para testar as regras de negócio e a validação dos erros. Não tive tempo de desenvolver mais testes contudo fiz os principais casos de erro. Foi fornecido um arquivo `database.sql` para testes na pasta `test`, esse arquivo contêm alguns produtos com valores atualizados para que os testes funcionem adequadamente. Sem trapaças.
 
 ### Configuração
 
