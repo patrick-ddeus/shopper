@@ -1,0 +1,54 @@
+version: "3.1"
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - mysql_latest_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - shopper-network
+      
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8088:80
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - shopper-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mysql
+    networks:
+      - shopper-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3030:3030"
+    depends_on:
+      - backend
+    networks:
+      - shopper-network
+  
+volumes:
+  mysql_latest_data:
+networks:
+  shopper-network:
+    driver: bridge
