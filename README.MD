@@ -77,10 +77,13 @@ docker-compose up -d
 
 Isso iniciará todos os contêiner necessários para a execução da aplicação, o arquivo `.env` na raíz do repositório garantirá que o MySQL seja iniciado com as configurações definidas no arquivo docker-compose.yml.
 
+Para as configurações setadas caso todos os conteinêrs tenham sido iniciados corretamente sua aplicação estará disponível em http://localhost:3030. 
+
 ### Acesso ao Banco de Dados via phpMyAdmin (Opcional):
 
 Você pode acessar o phpMyAdmin para gerenciar o banco de dados MySQL através do seguinte link: http://localhost:8088.
 Use as credenciais definidas no arquivo docker-compose.yml para fazer login.
+No painel você poderá carregar as queries no arquivo `database.sql` para que a aplicação funcione corretamente.
 
 ### Comandos Úteis do Docker
 
