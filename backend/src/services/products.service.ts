@@ -330,7 +330,7 @@ async function checkIfPackInRequest(
     return +product.code === +packInDatabaseByProductId[0].pack_code;
   });
 
-  if (Math.round(priceThatPackMustHave) !== +isPackReadjustmentInRequest?.new_price) {
+  if (priceThatPackMustHave.toFixed(2) !== Number(isPackReadjustmentInRequest?.new_price).toFixed(2)) {
     invalidProducts.push(
       buildError(
         code.toString(),
